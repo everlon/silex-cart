@@ -1,0 +1,50 @@
+# Deny access to everything by default
+Order Deny,Allow
+deny from all
+
+# ALLOW ACCESS TO FILES
+<Files *.css>
+    allow from all
+</Files>
+<Files *.js>
+    allow from all
+</Files>
+
+# Images
+<Files *.jpg>
+    allow from all
+</Files>
+<Files *.png>
+    allow from all
+</Files>
+<Files *.gif>
+    allow from all
+</Files>
+<Files *.ico>
+    allow from all
+</Files>
+<Files *.svg>
+    allow from all
+</Files>
+
+# Fonts
+<Files *.otf>
+    allow from all
+</Files>
+<Files *.eot>
+    allow from all
+</Files>
+<Files *.ttf>
+    allow from all
+</Files>
+<Files *.woff>
+    allow from all
+</Files>
+
+
+<IfModule mod_headers.c>
+    #Header add Access-Control-Allow-Origin "http://app.epictures.com.br"
+    #Header add Access-Control-Allow-Origin "http://web.epictures.com.br"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Credentials true
+</IfModule>
